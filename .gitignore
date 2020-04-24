@@ -1,0 +1,3 @@
+*.v2
+*.suo
+/.vs/NetCoreWithAngularTemplate/config/applicationhost.config
