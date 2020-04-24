@@ -1,3 +1,4 @@
 *.v2
 *.suo
 /.vs/NetCoreWithAngularTemplate/config/applicationhost.config
+/NetCoreWithAngularTemplate/ClientApp/package-lock.json
