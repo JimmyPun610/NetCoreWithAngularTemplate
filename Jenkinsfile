@@ -12,6 +12,30 @@ pipeline {
       }
     }
 
+    stage('Clean') {
+      steps {
+        sh 'dotnet clean'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'dotnet build -c Release'
+      }
+    }
+
+    stage('Publish') {
+      steps {
+        sh 'dotnet publish -c Release'
+      }
+    }
+
+    stage('') {
+      steps {
+        sh 'ls NetCoreWithAngularTemplate/bin/release/netcoreapp3.1/publish'
+      }
+    }
+
   }
   environment {
     HOME = '/tmp'
