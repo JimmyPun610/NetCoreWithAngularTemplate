@@ -7,19 +7,8 @@ pipeline {
   }
   stages {
     stage('Restore') {
-      parallel {
-        stage('Restore') {
-          steps {
-            sh 'dotnet restore'
-          }
-        }
-
-        stage('install nodejs') {
-          steps {
-            sh 'apt-get install nodejs'
-          }
-        }
-
+      steps {
+        sh 'dotnet restore'
       }
     }
 
