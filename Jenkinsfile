@@ -19,8 +19,19 @@ pipeline {
     }
 
     stage('Build') {
-      steps {
-        sh 'dotnet build -c Release'
+      parallel {
+        stage('Build') {
+          steps {
+            sh 'dotnet build -c Release'
+          }
+        }
+
+        stage('Node') {
+          steps {
+            nodejs 'Node-9.11.1'
+          }
+        }
+
       }
     }
 
@@ -30,7 +41,7 @@ pipeline {
       }
     }
 
-    stage('error') {
+    stage('Check') {
       steps {
         sh 'ls NetCoreWithAngularTemplate/bin/release/netcoreapp3.1/publish'
       }
