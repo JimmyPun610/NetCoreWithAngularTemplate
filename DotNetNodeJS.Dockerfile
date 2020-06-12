@@ -9,3 +9,4 @@ RUN wget -q -O node-v$NODE_VERSION-linux-x64-musl.tar.xz "https://unofficial-bui
     && tar -xJf "node-v$NODE_VERSION-linux-x64-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
     && rm "node-v$NODE_VERSION-linux-x64-musl.tar.xz"  
+
