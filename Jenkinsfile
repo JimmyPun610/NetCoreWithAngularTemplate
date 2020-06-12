@@ -30,9 +30,10 @@ pipeline {
       }
     }
 
-    stage('Check') {
+    stage('Archive') {
       steps {
         sh 'ls NetCoreWithAngularTemplate/bin/Release/netcoreapp3.1/publish/'
+        archiveArtifacts(artifacts: 'BuildResult', onlyIfSuccessful: true)
       }
     }
 
