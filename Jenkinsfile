@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+    dockerfile {
+      filename 'DotNetNodeJS.Dockerfile'
     }
 
   }
@@ -19,19 +19,8 @@ pipeline {
     }
 
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'dotnet build -c Release'
-          }
-        }
-
-        stage('Node') {
-          steps {
-            nodejs 'Node-9.11.1'
-          }
-        }
-
+      steps {
+        sh 'dotnet build -c Release'
       }
     }
 
