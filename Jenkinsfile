@@ -32,7 +32,7 @@ pipeline {
 
     stage('Check') {
       steps {
-        sh 'ls NetCoreWithAngularTemplate/bin/release/netcoreapp3.1/publish'
+        sh 'ls NetCoreWithAngularTemplate/bin/Release/netcoreapp3.1/publish/'
       }
     }
 
