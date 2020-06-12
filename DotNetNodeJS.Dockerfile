@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 
 # Installing Node
-ENV NODE_VERSION=14.4.0     
+ENV NODE_VERSION=12.16.3     
 
 RUN wget -q -O node-v$NODE_VERSION-linux-x64-musl.tar.xz "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64-musl.tar.xz" \
     && node_sha256="af47aa64de372d9a9d16307b6af9785ee28bdf9892f1de28a78b85917dacf257" \
